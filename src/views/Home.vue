@@ -16,7 +16,7 @@ export default {
   methods: {
     doSearch(e) {
       console.log('click', e);
-      this.$router.push({path:'/search',query:{id:this.input}});
+      this.$router.push({path:'/search',query:{key:this.input}});
     }
   }
 }

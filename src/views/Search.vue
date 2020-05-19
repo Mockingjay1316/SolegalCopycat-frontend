@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>{{ this.$route.query.id }}</h1>
+    <h1>{{ this.$route.query.key }}</h1>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: 'Search',
   mounted: function () {
-    console.log('get ' + this.$route.query.id)
+    console.log('get ' + this.$route.query.key)
   }
 }
 </script>
