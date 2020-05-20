@@ -1,5 +1,9 @@
 # solegalcopycat-frontend
 
+原网页：[solegal.cn](https://solegal.cn)
+
+仅作交流学习使用，若有侵权请联系删除。
+
 ## Project setup
 ```
 npm install
