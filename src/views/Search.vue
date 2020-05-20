@@ -71,6 +71,7 @@
                         type="text"
                         maxlength="1000"
                         placeholder="请输入案情描述、关键词、案由、案号..."
+                        v-bind:value="this.$route.query.key"
                         data-v-73d3fb0a
                       />
                       <div class="el-input-group__append" data-v-73d3fb0a>
@@ -105,25 +106,6 @@
               <!---->
               <div class="flex-row user-zone cross-align-center" data-v-130acafa>
                 <div data-v-130acafa>
-                  <button
-                    class="el-button el-button--text el-button--medium"
-                    type="button"
-                    data-v-130acafa
-                  >
-                    <!---->
-                    <!---->
-                    <span>登录</span>
-                  </button>
-                  <span class="sep" data-v-130acafa></span>
-                  <button
-                    class="el-button el-button--text el-button--medium"
-                    type="button"
-                    data-v-130acafa
-                  >
-                    <!---->
-                    <!---->
-                    <span>注册</span>
-                  </button>
                 </div>
               </div>
             </div>
@@ -152,17 +134,17 @@
                         data-v-0eb21d13
                       >
                         仍然搜索：
-                        <span data-v-0eb21d13>沙漏</span>
+                        <span data-v-0eb21d13>{{this.$route.query.key}}</span>
                       </div>
                     </div>
                     <span
                       tabindex="0"
-                      title="沙漏"
+                      v-bind:title="this.$route.query.key"
                       class="el-tag el-tag--medium el-popover__reference"
                       aria-describedby="el-popover-5844"
                       data-v-0eb21d13
                     >
-                      沙漏
+                      {{this.$route.query.key}}
                       <i class="el-tag__close el-icon-close"></i>
                     </span>
                   </span>
@@ -1092,7 +1074,13 @@
                     <span data-v-4da420ba>共搜索到163条内容</span>
                   </div>
                 </div>
-                
+                <!-- insert here -->
+                <SearchItem
+                  v-for="item in sitems"
+                  v-bind:key="item.id"
+                  v-bind:title="item.title"
+                  v-bind:content="item.content"
+                ></SearchItem>
                 <div class="flex-row pagination main-align-center box-shadow" data-v-4da420ba>
                   <div class="el-pagination is-background" data-v-4da420ba>
                     <span style="color: rgb(102, 102, 102);" data-v-4da420ba>共 163 条</span>
@@ -1126,10 +1114,38 @@
 </template>
 
 <script>
+import SearchItem from '@/components/SearchItem.vue'
+
 export default {
   name: "Search",
+  data: function() { 
+    return {
+      newTodoText: '',
+      sitems: [
+        {
+          id: 1,
+          title: '1',
+          content: '1',
+        },
+        {
+          id: 2,
+          title: '2',
+          content: '2',
+        },
+        {
+          id: 3,
+          title: '3',
+          content: '3',
+        }
+      ],
+      nextTodoId: 4
+    }
+  },
   mounted: function() {
     console.log("get " + this.$route.query.key);
+  },
+  components: {
+    SearchItem
   }
 };
 </script>
@@ -2031,7 +2047,7 @@ img[data-v-343c852c] {
 [data-v-130acafa].logo {
 	width: 134px;
 	height: 60px;
-	background-image: url("data:image/png;base64,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");
+	background-image: url("../assets/solegal_logo.png");
 	background-position: 50%;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
