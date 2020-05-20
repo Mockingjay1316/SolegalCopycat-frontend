@@ -1056,34 +1056,21 @@
                 >
                   <div class="flex-row cross-align-center toolbar-left" data-v-4da420ba>
                     <!---->
-                    <button
-                      class="el-button toolbar-item el-button--text el-button--medium"
-                      type="button"
-                      data-v-4da420ba
-                    >
-                      <!---->
-                      <!---->
-                      <span>
-                        <i class="el-icon-my-piliangxiazaiicon" data-v-4da420ba></i>
-                        批量下载
-                      </span>
-                    </button>
-                    <!---->
                   </div>
                   <div class="flex-row" data-v-4da420ba>
-                    <span data-v-4da420ba>共搜索到163条内容</span>
+                    <span data-v-4da420ba>共搜索到{{totalItemNum}}条内容</span>
                   </div>
                 </div>
                 <!-- insert here -->
                 <SearchItem
-                  v-for="item in sitems"
+                  v-for="item in itemData"
                   v-bind:key="item.id"
                   v-bind:title="item.title"
                   v-bind:content="item.content"
                 ></SearchItem>
                 <div class="flex-row pagination main-align-center box-shadow" data-v-4da420ba>
                   <div class="el-pagination is-background" data-v-4da420ba>
-                    <span style="color: rgb(102, 102, 102);" data-v-4da420ba>共 163 条</span>
+                    <span style="color: rgb(102, 102, 102);" data-v-4da420ba>共 {{totalItemNum}} 条</span>
                     <button disabled="disabled" class="btn-prev" type="button">
                       <i class="el-icon el-icon-arrow-left"></i>
                     </button>
@@ -1115,6 +1102,7 @@
 
 <script>
 import SearchItem from '@/components/SearchItem.vue'
+import axios from 'axios'
 
 export default {
   name: "Search",
@@ -1138,11 +1126,28 @@ export default {
           content: '3',
         }
       ],
-      nextTodoId: 4
+      nextTodoId: 4,
+      totalItemNum: 0,
+      i: 0,
+      itemData: null
     }
   },
   mounted: function() {
     console.log("get " + this.$route.query.key);
+    axios
+      .get('http://127.0.0.1:8010/search/common/?keyword='+this.$route.query.key)
+      .then(response => {
+        this.itemData = new Array();
+        console.log(response.data.result[0]);
+        for (var i = 0;i < response.data.result.length; i++) {
+          this.itemData.push({
+            id: i,
+            title: response.data.result[i].AH,
+            content: response.data.result[i].QW.substring(0,200)
+          })
+        }
+      })
+      .catch(error => console.log(error))
   },
   components: {
     SearchItem
