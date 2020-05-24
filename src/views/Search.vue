@@ -282,42 +282,14 @@
                           role="treeitem"
                           aria-disabled
                           draggable="false"
+                          v-for="item in coa"
+                          v-bind:key="item.id"
                         >
                           <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
+                            <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
-                            <span class="el-tree-node__label">民事(110)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">刑事(46)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">行政(6)</span>
+                            <span class="el-tree-node__label">{{item.coa}}</span>
                           </div>
                           <!---->
                         </div>
@@ -342,402 +314,14 @@
                           role="treeitem"
                           aria-disabled
                           draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">广东(35)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">北京(20)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">辽宁(11)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">河北(9)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">内蒙古(7)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">四川(7)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">重庆(6)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">浙江(5)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">山东(5)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">江苏(4)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">湖南(4)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">吉林(3)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">黑龙江(3)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">上海(3)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">河南(3)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">广西(3)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">贵州(3)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">陕西(3)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">天津(2)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">福建(2)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">湖北(2)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
+                          v-for="item in region"
+                          v-bind:key="item.id"
                         >
                           <div class="el-tree-node__content" style="padding-left: 0px;">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
-                            <span class="el-tree-node__label">最高人民法院(1)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">山西(1)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">江西(1)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">海南(1)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">青海(1)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">宁夏(1)</span>
+                            <span class="el-tree-node__label">{{item.reg}}</span>
                           </div>
                           <!---->
                         </div>
@@ -762,57 +346,14 @@
                           role="treeitem"
                           aria-disabled
                           draggable="false"
+                          v-for="item in court_level"
+                          v-bind:key="item.id"
                         >
                           <div class="el-tree-node__content" style="padding-left: 0px;">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
-                            <span class="el-tree-node__label">最高人民法院(1)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">高级人民法院(10)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">中级人民法院(40)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">基层人民法院(95)</span>
+                            <span class="el-tree-node__label">{{item.court_level}}</span>
                           </div>
                           <!---->
                         </div>
@@ -1067,6 +608,9 @@
                   v-bind:key="item.id"
                   v-bind:title="item.title"
                   v-bind:content="item.content"
+                  v-bind:jbfy="item.jbfy"
+                  v-bind:ah="item.ah"
+                  v-bind:lkrq="item.lkrq"
                 ></SearchItem>
                 <div class="flex-row pagination main-align-center box-shadow" data-v-4da420ba>
                   <div class="el-pagination is-background" data-v-4da420ba>
@@ -1075,17 +619,9 @@
                       <i class="el-icon el-icon-arrow-left"></i>
                     </button>
                     <ul class="el-pager">
-                      <li class="number active">1</li>
-                      <!---->
-                      <li class="number">2</li>
-                      <li class="number">3</li>
-                      <li class="number">4</li>
-                      <li class="number">5</li>
-                      <li class="number">6</li>
-                      <li class="el-icon more btn-quicknext el-icon-more"></li>
-                      <li class="number">9</li>
+                      <li v-for="num in real_near_page" v-bind:key="num.id" class="number" v-bind:class="{ active: num.isActive }">{{num.id}}</li>
                     </ul>
-                    <button class="btn-next" type="button">
+                    <button class="btn-next" type="button" @click="next_page">
                       <i class="el-icon el-icon-arrow-right"></i>
                     </button>
                   </div>
@@ -1109,48 +645,92 @@ export default {
   data: function() { 
     return {
       newTodoText: '',
-      sitems: [
-        {
-          id: 1,
-          title: '1',
-          content: '1',
-        },
-        {
-          id: 2,
-          title: '2',
-          content: '2',
-        },
-        {
-          id: 3,
-          title: '3',
-          content: '3',
-        }
-      ],
       nextTodoId: 4,
       totalItemNum: 0,
       i: 0,
-      itemData: null
+      current_page: 0,
+      max_page: 0,
+      near_page: new Array(),
+      itemData: null,
+      region: null,
+      coa: null,   //cause of action
+      court_level: null
     }
   },
   mounted: function() {
-    console.log("get " + this.$route.query.key);
+    console.log("get " + this.$route.query.key + " page " + this.$route.query.page);
+    this.current_page = Number(this.$route.query.page);
+    console.log(typeof this.current_page);
+    
     axios
-      .get('http://127.0.0.1:8010/search/common/?keyword='+this.$route.query.key)
+      .get('http://127.0.0.1:8010/search/common/?keyword='+this.$route.query.key+'&page='+this.$route.query.page)
       .then(response => {
+        this.max_page = Number(response.data.info.total_pages);
+        this.near_page = new Array();
+        for (var i = this.current_page-4;i < this.current_page+4 && i <= this.max_page; ++i) {
+          this.near_page.push({
+            id: i,
+            isActive: i == this.current_page,
+          });
+        }
         this.itemData = new Array();
-        console.log(response.data.result[0]);
-        for (var i = 0;i < response.data.result.length; i++) {
+        console.log(response.data);
+        for (i = 0;i < response.data.result.length; i++) {
           this.itemData.push({
             id: i,
             title: response.data.result[i].AH,
-            content: response.data.result[i].QW.substring(0,200)
+            content: response.data.result[i].QW.substring(0,200),
+            ah: response.data.result[i].AH,
+            jbfy: response.data.result[i].JBFY,
+            lkrq: response.data.result[i].LKRQ
+          })
+        }
+        this.totalItemNum = response.data.info.total_num;
+
+        this.region = new Array();
+        for (i = 0;i < response.data.info.condition.region.length; i++) {
+          this.region.push({
+            id: i,
+            reg: response.data.info.condition.region[i]
+          })
+        }
+
+        this.coa = new Array();
+        for (i = 0;i < response.data.info.condition.cause_of_action.length; i++) {
+          this.coa.push({
+            id: i,
+            coa: response.data.info.condition.cause_of_action[i]
+          })
+        }
+
+        this.court_level = new Array();
+        for (i = 0;i < response.data.info.condition.court_level.length; i++) {
+          this.court_level.push({
+            id: i,
+            court_level: response.data.info.condition.court_level[i]
           })
         }
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log(error));
   },
   components: {
     SearchItem
+  },
+  computed: {
+    real_near_page: function() {
+      return this.near_page.filter(function(num) {
+        return num.id > 0;
+      })
+    }
+  },
+  methods: {
+    next_page: function() {
+      if (this.current_page !== this.max_page) {
+        console.log("click next page");
+        this.$router.push({ path: "/search", query: { key: this.$route.query.key, page: this.current_page + 1 } });
+        this.$router.go(0);
+      }
+    }
   }
 };
 </script>

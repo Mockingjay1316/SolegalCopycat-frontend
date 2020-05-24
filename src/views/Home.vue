@@ -68,7 +68,7 @@ export default {
   methods: {
     doSearch(e) {
       console.log("click " + this.input, e);
-      this.$router.push({ path: "/search", query: { key: this.input } });
+      this.$router.push({ path: "/search", query: { key: this.input, page: 1 } });
     }
   }
 };
