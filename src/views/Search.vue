@@ -151,64 +151,6 @@
                 </div>
               </div>
             </div>
-            <div class="flex-row subtype-selection cross-align-start inner" data-v-0eb21d13>
-              <span class="text" style="line-height: 40px;" data-v-0eb21d13>案例选择:</span>
-              <div class="flex-1 el-tabs el-tabs--top" data-v-0eb21d13>
-                <div class="el-tabs__header is-top">
-                  <div class="el-tabs__nav-wrap is-top">
-                    <div class="el-tabs__nav-scroll">
-                      <div
-                        class="el-tabs__nav is-top"
-                        role="tablist"
-                        style="transform: translateX(0px);"
-                      >
-                        <div
-                          class="el-tabs__active-bar is-top"
-                          style="width: 87px; transform: translateX(112px);"
-                        ></div>
-                        <div
-                          tabindex="-1"
-                          class="el-tabs__item is-top"
-                          id="tab-authcase"
-                          role="tab"
-                          aria-controls="pane-authcase"
-                        >
-                          <span data-v-0eb21d13>权威案例(0)</span>
-                        </div>
-                        <div
-                          tabindex="0"
-                          class="el-tabs__item is-top is-active"
-                          id="tab-case"
-                          role="tab"
-                          aria-selected="true"
-                          aria-controls="pane-case"
-                        >
-                          <span data-v-0eb21d13>普通案例(163)</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el-tabs__content">
-                  <div
-                    class="el-tab-pane"
-                    id="pane-authcase"
-                    role="tabpanel"
-                    aria-hidden="true"
-                    aria-labelledby="tab-authcase"
-                    style="display: none;"
-                    data-v-0eb21d13
-                  ></div>
-                  <div
-                    class="el-tab-pane"
-                    id="pane-case"
-                    role="tabpanel"
-                    aria-labelledby="tab-case"
-                    data-v-0eb21d13
-                  ></div>
-                </div>
-              </div>
-            </div>
           </div>
           <div data-v-0eb21d13>
             <div class="flex-row inner" style="display: none;" data-v-0eb21d13 data-v-4da420ba>
@@ -615,11 +557,11 @@
                 <div class="flex-row pagination main-align-center box-shadow" data-v-4da420ba>
                   <div class="el-pagination is-background" data-v-4da420ba>
                     <span style="color: rgb(102, 102, 102);" data-v-4da420ba>共 {{totalItemNum}} 条</span>
-                    <button disabled="disabled" class="btn-prev" type="button">
+                    <button class="btn-prev" type="button" @click="prev_page">
                       <i class="el-icon el-icon-arrow-left"></i>
                     </button>
                     <ul class="el-pager">
-                      <li v-for="num in real_near_page" v-bind:key="num.id" class="number" v-bind:class="{ active: num.isActive }">{{num.id}}</li>
+                      <li v-for="num in real_near_page" v-bind:key="num.id" class="number" v-bind:class="{ active: num.isActive }" @click="goto_page(num.id)">{{num.id}}</li>
                     </ul>
                     <button class="btn-next" type="button" @click="next_page">
                       <i class="el-icon el-icon-arrow-right"></i>
@@ -667,7 +609,7 @@ export default {
       .then(response => {
         this.max_page = Number(response.data.info.total_pages);
         this.near_page = new Array();
-        for (var i = this.current_page-4;i < this.current_page+4 && i <= this.max_page; ++i) {
+        for (var i = this.current_page-4;i < this.current_page+5 && i <= this.max_page; ++i) {
           this.near_page.push({
             id: i,
             isActive: i == this.current_page,
@@ -728,6 +670,18 @@ export default {
       if (this.current_page !== this.max_page) {
         console.log("click next page");
         this.$router.push({ path: "/search", query: { key: this.$route.query.key, page: this.current_page + 1 } });
+        this.$router.go(0);
+      }
+    },
+    goto_page: function(page_id) {
+      console.log("goto page "+page_id);
+      this.$router.push({ path: "/search", query: { key: this.$route.query.key, page: page_id } });
+      this.$router.go(0);
+    },
+    prev_page: function() {
+      if (this.current_page !== 1) {
+        console.log("click prev page");
+        this.$router.push({ path: "/search", query: { key: this.$route.query.key, page: this.current_page - 1 } });
         this.$router.go(0);
       }
     }
