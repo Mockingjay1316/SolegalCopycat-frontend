@@ -54,16 +54,6 @@
               ></a>
               <div class="flex-col" data-v-130acafa>
                 <div data-v-130acafa data-v-73d3fb0a>
-                  <div
-                    class="flex-row category-list cross-align-center"
-                    data-v-73d3fb0a
-                    data-v-431171e6
-                  >
-                    <span class="category-item category-item-active" data-v-431171e6>案例</span>
-                    <span class="category-item" data-v-431171e6>法律法规</span>
-                    <span class="category-item" data-v-431171e6>律师</span>
-                    <span class="category-item" data-v-431171e6>律所</span>
-                  </div>
                   <div class="search-box" data-v-73d3fb0a>
                     <div class="el-input el-input-group el-input-group--append" data-v-73d3fb0a>
                       <input
@@ -320,91 +310,17 @@
                           role="treeitem"
                           aria-disabled
                           draggable="false"
+                          v-for="item in year"
+                          v-bind:key="item.id"
                         >
                           <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
+                            <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
-                            <span class="el-tree-node__label">2018年(24)</span>
+                            <span class="el-tree-node__label">{{item.year}}年</span>
                           </div>
                           <!---->
                         </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">2017年(46)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">2016年(34)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">2015年(29)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">2014年(21)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">2013年(5)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <!---->
                         <div class="el-tree__drop-indicator" style="display: none;"></div>
                       </div>
                       <!---->
@@ -425,61 +341,17 @@
                           role="treeitem"
                           aria-disabled
                           draggable="false"
+                          v-for="item in jp"
+                          v-bind:key="item.id"
                         >
                           <div class="el-tree-node__content" style="padding-left: 0px;">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
-                            <span class="el-tree-node__label">一审案件(120)</span>
+                            <span class="el-tree-node__label">{{item.jp}}</span>
                           </div>
                           <!---->
                         </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">二审案件(40)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">再审案件(1)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">其他(2)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <!---->
                         <div class="el-tree__drop-indicator" style="display: none;"></div>
                       </div>
                       <!---->
@@ -500,27 +372,14 @@
                           role="treeitem"
                           aria-disabled
                           draggable="false"
+                          v-for="item in dt"
+                          v-bind:key="item.id"
                         >
                           <div class="el-tree-node__content" style="padding-left: 0px;">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
-                            <span class="el-tree-node__label">判决书(157)</span>
-                          </div>
-                          <!---->
-                        </div>
-                        <div
-                          tabindex="-1"
-                          class="el-tree-node is-focusable"
-                          role="treeitem"
-                          aria-disabled
-                          draggable="false"
-                        >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
-                            <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
-                            <!---->
-                            <!---->
-                            <span class="el-tree-node__label">裁定书(5)</span>
+                            <span class="el-tree-node__label">{{item.dt}}</span>
                           </div>
                           <!---->
                         </div>
@@ -596,7 +455,10 @@ export default {
       itemData: null,
       region: null,
       coa: null,   //cause of action
-      court_level: null
+      court_level: null,
+      year: null,
+      jp: null,     //judicial procedure
+      dt: null,
     }
   },
   mounted: function() {
@@ -650,6 +512,32 @@ export default {
           this.court_level.push({
             id: i,
             court_level: response.data.info.condition.court_level[i]
+          })
+        }
+
+        this.year = new Array();
+        for (i = 0;i < response.data.info.condition.year.length; i++) {
+          this.year.push({
+            id: i,
+            year: response.data.info.condition.year[i]
+          })
+        }
+
+        this.jp = new Array();
+        for (i = 0;i < response.data.info.condition.judicial_procedure.length; i++) {
+          if (response.data.info.condition.judicial_procedure[i]!=='Unknown') {
+            this.jp.push({
+              id: i,
+              jp: response.data.info.condition.judicial_procedure[i]
+            })
+          }
+        }
+
+        this.dt = new Array();
+        for (i = 0;i < response.data.info.condition.document_type.length; i++) {
+          this.dt.push({
+            id: i,
+            dt: response.data.info.condition.document_type[i]
           })
         }
       })
