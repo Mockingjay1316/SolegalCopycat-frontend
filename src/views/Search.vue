@@ -68,21 +68,6 @@
                         <i class="el-icon-search" data-v-73d3fb0a></i>
                       </div>
                     </div>
-                    <label class="el-checkbox" role="checkbox" data-v-73d3fb0a>
-                      <span class="el-checkbox__input" aria-checked="mixed">
-                        <span class="el-checkbox__inner"></span>
-                        <input
-                          class="el-checkbox__original"
-                          aria-hidden="true"
-                          type="checkbox"
-                          value
-                        />
-                      </span>
-                      <span class="el-checkbox__label">
-                        精确搜索
-                        <!---->
-                      </span>
-                    </label>
                   </div>
                   <div
                     class="flex-col suggestion box-shadow"
@@ -166,7 +151,7 @@
                       data-v-0eb21d13
                     >
                       {{item.val}}
-                      <i class="el-tag__close el-icon-close"></i>
+                      <i class="el-tag__close el-icon-close" @click="remove_filter(item.cat)"></i>
                     </span>
                   </span>
                 </div>
@@ -248,7 +233,7 @@
                           v-for="item in coa"
                           v-bind:key="item.id"
                         >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
+                          <div class="el-tree-node__content" style="padding-left: 0px;" @click="add_filter('coa', item.coa)">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
@@ -280,7 +265,7 @@
                           v-for="item in region"
                           v-bind:key="item.id"
                         >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
+                          <div class="el-tree-node__content" style="padding-left: 0px;" @click="add_filter('region', item.reg)">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
@@ -344,7 +329,7 @@
                           v-for="item in year"
                           v-bind:key="item.id"
                         >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
+                          <div class="el-tree-node__content" style="padding-left: 0px;" @click="add_filter('year', item.year)">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
@@ -406,7 +391,7 @@
                           v-for="item in dt"
                           v-bind:key="item.id"
                         >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
+                          <div class="el-tree-node__content" style="padding-left: 0px;" @click="add_filter('type', item.dt)">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
@@ -672,6 +657,64 @@ export default {
       this.$router.push({
         path: "/search",
         query: { key: this.$route.query.key, page: page_id }
+      });
+      this.$router.go(0);
+    },
+    remove_filter: function(cat) {
+      console.log("remove filter " + cat);
+      console.log(this.filter);
+      var t_query = {};
+      t_query.key = this.$route.query.key;
+      t_query.page = this.$route.query.page
+      for (var i = 0;i < this.filter.length; i++) {
+        if (this.filter[i].cat === cat) {
+          this.filter[i].val = undefined;
+        }
+      }
+      for (i = 0;i < this.filter.length; i++) {
+        if (typeof this.filter[i].val !== "undefined") {
+          if (this.filter[i].cat === "coa") {
+            t_query["cause_of_action"] = this.filter[i].val;
+          } else {
+            t_query[this.filter[i].cat] = this.filter[i].val;
+          }
+        }
+      }
+      console.log(this.filter);
+      this.$router.push({
+        path: "/search",
+        query: t_query
+      });
+      this.$router.go(0);
+    },
+    add_filter: function(cat, val) {
+      console.log("add filter " + cat);
+      console.log(this.filter);
+      var t_query = {};
+      t_query.key = this.$route.query.key;
+      t_query.page = this.$route.query.page
+      for (var i = 0;i < this.filter.length; i++) {
+        if (this.filter[i].cat === cat) {
+          if (this.filter[i].val === val) {
+            return;
+          }
+          this.filter[i].val = val;
+          break;
+        }
+      }
+      for (i = 0;i < this.filter.length; i++) {
+        if (typeof this.filter[i].val !== "undefined") {
+          if (this.filter[i].cat === "coa") {
+            t_query["cause_of_action"] = this.filter[i].val;
+          } else {
+            t_query[this.filter[i].cat] = this.filter[i].val;
+          }
+        }
+      }
+      console.log(this.filter);
+      this.$router.push({
+        path: "/search",
+        query: t_query
       });
       this.$router.go(0);
     },
