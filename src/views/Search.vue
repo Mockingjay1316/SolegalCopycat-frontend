@@ -61,10 +61,10 @@
                         type="text"
                         maxlength="1000"
                         placeholder="请输入案情描述、关键词、案由、案号..."
-                        v-bind:value="this.$route.query.key"
                         data-v-73d3fb0a
+                        v-model="input"
                       />
-                      <div class="el-input-group__append" data-v-73d3fb0a>
+                      <div class="el-input-group__append" data-v-73d3fb0a @click="doSearch">
                         <i class="el-icon-search" data-v-73d3fb0a></i>
                       </div>
                     </div>
@@ -482,13 +482,15 @@ export default {
       jp: null, //judicial procedure
       dt: null,
       filter: new Array(),
-      get_text: ""
+      get_text: "",
+      input: ""
     };
   },
   mounted: function() {
     console.log(
       "get " + this.$route.query.key + " page " + this.$route.query.page
     );
+    this.input = this.$route.query.key;
     console.log(
       "type " + this.$route.query.type + " region " + this.$route.query.region + " year " + this.$route.query.year + " coa " + this.$route.query.cao
     );
@@ -727,6 +729,11 @@ export default {
         });
         this.$router.go(0);
       }
+    },
+    doSearch(e) {
+      console.log("click " + this.input, e);
+      this.$router.push({ path: "/search", query: { key: this.input, page: 1 } });
+      this.$router.go(0);
     }
   }
 };
