@@ -137,7 +137,11 @@
                       <i class="el-tag__close el-icon-close"></i>
                     </span>
                   </span>
-                  <span class="filter-item" data-v-0eb21d13>
+                  <span
+                    class="filter-item"
+                    data-v-0eb21d13
+                    v-for="item in real_filter"
+                    v-bind:key="item.id">
                     <div
                       tabindex="0"
                       class="el-popover el-popper filter-item-popper"
@@ -161,7 +165,7 @@
                       aria-describedby="el-popover-8371"
                       data-v-0eb21d13
                     >
-                      层级：最高人民法院
+                      {{item.val}}
                       <i class="el-tag__close el-icon-close"></i>
                     </span>
                   </span>
@@ -491,22 +495,57 @@ export default {
       court_level: null,
       year: null,
       jp: null, //judicial procedure
-      dt: null
+      dt: null,
+      filter: new Array(),
+      get_text: ""
     };
   },
   mounted: function() {
     console.log(
       "get " + this.$route.query.key + " page " + this.$route.query.page
     );
+    console.log(
+      "type " + this.$route.query.type + " region " + this.$route.query.region + " year " + this.$route.query.year + " coa " + this.$route.query.cao
+    );
     this.current_page = Number(this.$route.query.page);
-    console.log(typeof this.current_page);
+    console.log(this.filter);
+    console.log(this.filter.year);
+    this.filter.push({
+      cat: "type",
+      val: this.$route.query.type
+    });
+    this.filter.push({
+      cat: "region",
+      val: this.$route.query.region
+    });
+    this.filter.push({
+      cat: "year",
+      val: this.$route.query.year
+    });
+    this.filter.push({
+      cat: "cao",
+      val: this.$route.query.cao
+    });
+    console.log(this.filter.year)
 
+    this.get_text = "http://127.0.0.1:8010/search/common/?keyword=" + this.$route.query.key + "&page=" + this.$route.query.page;
+    if (typeof this.filter[1].val !== "undefined") {
+      this.get_text = this.get_text + "&region=" + this.filter[1].val;
+    }
+    if (typeof this.filter[0].val !== "undefined") {
+      this.get_text = this.get_text + "&type=" + this.filter[0].val;
+    }
+    if (typeof this.filter[2].val !== "undefined") {
+      this.get_text = this.get_text + "&year=" + this.filter[2].val;
+    }
+    if (typeof this.filter[3].val !== "undefined") {
+      this.get_text = this.get_text + "&cause_of_action=" + this.filter[3].val;
+    }
+
+    console.log("goto backend "+this.get_text);
     axios
       .get(
-        "http://127.0.0.1:8010/search/common/?keyword=" +
-          this.$route.query.key +
-          "&page=" +
-          this.$route.query.page
+        this.get_text
       )
       .then(response => {
         this.max_page = Number(response.data.info.total_pages);
@@ -600,6 +639,7 @@ export default {
         }
       })
       .catch(error => console.log(error));
+      this.$forceUpdate();
   },
   components: {
     SearchItem
@@ -608,6 +648,11 @@ export default {
     real_near_page: function() {
       return this.near_page.filter(function(num) {
         return num.id > 0;
+      });
+    },
+    real_filter: function() {
+      return this.filter.filter(function(item) {
+        return typeof item.val !== "undefined";
       });
     }
   },
