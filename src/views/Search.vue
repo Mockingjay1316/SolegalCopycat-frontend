@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    <h1>{{ this.$route.query.key }}</h1>
     <div class="flex-col" id="app">
       <div class="el-dialog__wrapper" style="display: none;" data-v-0a80d877>
         <div
