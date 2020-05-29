@@ -6,7 +6,7 @@
         <!---->
         <a
           class="wenshu-title"
-          href="/wenshu/95c47fac-5f96-40c3-bfa5-3e5a72a08993?hash=NoCacheDrE8ntE0293oegdv5QabnirB7wFR4v9U6&amp;index=19"
+          v-bind:href="'/result?item=' + ah"
           target="_blank"
           data-v-c001cdde
         >{{title}}</a>

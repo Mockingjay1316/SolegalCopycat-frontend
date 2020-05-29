@@ -74,99 +74,56 @@
               <div class="wenshu-header" data-v-2da6a776>
                 <!---->
                 <span class="wenshu-title" data-v-2da6a776>
-                  迁安市
-                  <em>可以</em>维修部与蔡腾飞劳动争议二审民事判决书
+                  {{this.ah}}
                 </span>
                 <div class="flex-row sep-wrapper wenshu-info" data-v-2da6a776 data-v-6856ea31>
-                  <span class="sep-item" data-v-6856ea31>河北省唐山市中级人民法院</span>
-                  <span class="sep-item sep-offset-left" data-v-6856ea31>（2015）唐民一终字第193号</span>
-                  <span class="sep-item" data-v-6856ea31>2015-04-23</span>
+                  <span class="sep-item" data-v-6856ea31>{{this.jbfy}}</span>
+                  <span class="sep-item sep-offset-left" data-v-6856ea31>{{this.ah}}</span>
+                  <span class="sep-item" data-v-6856ea31>{{this.lkrq}}</span>
                 </div>
               </div>
               <div class="flex-col wenshu-content" data-v-2da6a776>
                 <div data-v-2da6a776>
                   <h2 id="SBDSR" data-v-2da6a776>当事人信息</h2>
-                  <p data-v-2da6a776></p>
-                  <p>
-                    上诉人（原审原告）：迁安市
-                    <em>可以</em>维修部，住所地：迁安市兴安大街中段路北。
-                  </p>
-                  <p>代表人：许月兰，该维修部负责人。</p>
-                  <p>委托代理人：朱玉香，该维修部员工。</p>
-                  <p>委托代理人：全云阁，迁安市新世纪法律事务所法律工作者。</p>
-                  <p>被上诉人（原审被告）：蔡腾飞，农民。</p>
-                  <p>
-                    委托代理人：张春江，
-                    <a
-                      href="/lawfirm/dfaf4b89-4886-4891-ad56-9ae75cc28ac4"
-                      target="_blank"
-                    >河北弘丹律师事务所</a>律师。
-                  </p>
-                  <p></p>
+                  <div class="text_wrap">
+                    {{this.dsr}}
+                    <p></p>
+                  </div>
                 </div>
                 <div data-v-2da6a776>
                   <h2 id="SSJL" data-v-2da6a776>诉讼记录</h2>
-                  <p data-v-2da6a776></p>
-                  <p>
-                    上诉人迁安市
-                    <em>可以</em>维修部因劳动争议纠纷一案，不服河北省迁安市人民法院（2014）安民初字第5823号民事判决，向本院提起上诉。本院依法组成合议庭审理了本案，现已审理终结。
-                  </p>
-                  <p></p>
+                  <div class="text_wrap">
+                    {{this.ssjl}}
+                    <p></p>
+                  </div>
                 </div>
                 <div data-v-2da6a776>
                   <h2 id="SS" data-v-2da6a776>案件基本情况</h2>
-                  <p data-v-2da6a776></p>
-                  <p>原审法院经审理查明：2011年5月16日，被告经自然人刘长春招录开始到原告承建的滦县东海钢厂工地从事钢结构焊接工作，当时刘长春与原告口头约定工资为120元／天。2011年6月3日，被告在工地进行管道吊装工作过程中，从天台上摔下受伤。后被送往迁安市燕山医院住院治疗。2011年7月21日，经唐山市劳动和社会保障局认定被告所受伤害为工伤。2013年4月11日，经唐山市劳动能力鉴定委员会鉴定被告的伤为陆级伤残、停工留薪期为拾个月。2013年10月11日，唐山市劳动能力鉴定委员会以公告的形式向原告送达了工伤职工劳动能力鉴定（确认）结论通知书。双方劳动关系存续期间，原告为被告缴纳了工伤保险费用。被告自己垫付劳动能力鉴定费600元。另查明：被告自停工留薪期满后未到原告处工作。又查明：被告就工伤待遇等劳动争议向迁安市劳动争议调解仲裁委员会提出仲裁申请。要求解除劳动关系，一次性结清工伤待遇。2014年6月7日，迁安市劳动争议调解仲裁委员会作出了迁劳人裁字（2013）第135号仲裁裁决书，裁决“一、在本裁决生效后10日内，由原告（被申请人）到迁安市社会保险经办机构为被告（申请人）办理住院期间伙食补助费、交通费、劳动能力鉴定费、一次性伤残补助金、一次性工伤医疗补助金的报领手续并支付给申请人。二、在本裁决书生效后10日内，由被申请人支付申请人停工留薪期工资36000元（120元／天×30×10个月）、一次性伤残就业补助金52722.72元（3295.17元／月×16个月）”。原告不服上述裁决向本院提起了诉讼。</p>
-                  <p>
-                    原审法院认为：被告所受伤害为工伤，事实清楚，本院予以确认。故原告应当按照法律规定给付被告各项工伤待遇。被告自停工留薪期满后未到原告处工作，应视为双方解除劳动合同关系，故被告主张的一次性伤残就业补助金应按2011年河北省职工月平均工资标准计算。原告主张被告的月工资为1667元／月，其提供的证据不能证明其主张，本院不予支持。依照《工伤保险条例》（国务院令第586号）第三十条、三十三条、第三十六条，参照《河北省工伤保险实施办法》（河北省人民政府令（2011）第21号）第二十七条、第三十四条之规定，判决如下：一、由原告迁安市
-                    <em>可以</em>维修部到迁安市社会保险经办机构为被告蔡腾飞办理住院期间伙食补助费、交通费、劳动能力鉴定费、一次性伤残补助金、一次性工伤医疗补助金的报领手续并给付被告蔡腾飞，于本判决生效后十日内履行；二、原告迁安市
-                    <em>可以</em>维修部给付被告蔡腾飞停工留薪期工资36000元（120元／天×30天×10个月）、一次性伤残就业补助金48221.28元（3013.83元／月×16个月）。案件受理费5元，由被告蔡腾飞负担。
-                  </p>
-                  <p>
-                    判后，原审原告迁安市
-                    <em>可以</em>维修部不服，向本院提起上诉，请求撤销原判，发回重审或依法改判。其主要上诉理由为：一审法院认定被上诉人日工资120元证据不足。首先，法院判决不应以仲裁裁决书为依据。本案所涉劳动争议在仲裁过程中，迁安市劳动人事争议仲裁委员会在第二次开庭时未经直接、留置、邮寄送达，而是直接公告送达开庭传票，在上诉人未对证人证言质证的情况下，不应认定被上诉人日工资120元。其次，在一审过程中，上诉人向法院提交了“参保工伤保险人员情况表”，且一审法院也向社保部门调取了被上诉人的月缴费工资情况，以上证据足以证实被上诉人月缴费工资为1667元。
-                  </p>
-                  <p>被上诉人蔡腾飞答辩称，本案已经迁安市劳动争议仲裁委员会以及迁安市人民法院审理完毕。就上诉人所称被上诉人工资在两次审理中也已经查明并予以确认，故请求二审人民法院依法判决驳回上诉人的上诉请求，维持原判。</p>
-                  <p>二审经审理，查明的事实与原审判决所认定的事实相一致。上述事实有双方当事人陈述、鉴定意见书、书证等相关证据予以证实，并记录在卷。</p>
-                  <p></p>
+                  <div class="text_wrap">
+                    {{this.ajjbqk}}
+                    <p></p>
+                  </div>
                 </div>
                 <div data-v-2da6a776>
                   <h2 id="LY" data-v-2da6a776>裁判分析过程</h2>
-                  <p data-v-2da6a776></p>
-                  <p>
-                    本院认为，被上诉人蔡腾飞系上诉人迁安市
-                    <em>可以</em>维修部工人，其在工作中受伤并被唐山市劳动和社会保障局认定为工伤、经唐山市劳动能力鉴定委员会鉴定为陆级伤残、停工留薪期拾个月，事实清楚，双方均无异议。本案双方争议的焦点是在计算被上诉人停工留薪期工资时的月工资数为多少，即在计算被上诉人停工留薪期工资时以多少计算为准。本院经审理认为，在仲裁审理中被上诉人提供的证人出庭作证证明被上诉人的日工资为120元／天。上诉人主张在仲裁程序中未对被上诉人提供的证人证言进行质证，但从原审法院调取的仲裁笔录显示，上诉人已经对该证人证言发表了质证意见。原审中上诉人虽提交了“参保工伤保险人员情况表”，该表显示被上诉人缴费基数为1667元。结合原审法院对社保工作人员的调查笔录，该笔录显示，根据《工伤保险条例》
-                    <a
-                      href="/law/3e2adefc-d653-48bc-ab3c-d64c37f2d2f0#T60"
-                      target="_blank"
-                    >的相关规定，本人缴费工资不得低于统筹地区职工平均工资60％。</a>而2010年唐山市平均工资为2778元，其60％为1667元。参照当时被上诉人所从事的岗位工种，上诉人主张被上诉人的月工资应按1667元计算，与事实不符。故原审判决在计算被上诉人停工留薪期工资时以每月3600元并无不妥。对上诉人的上述主张，本院不予支持。综上，原审判决认定事实清楚，适用法律正确。依照《中华人民共和国民事诉讼法》
-                    <a
-                      href="/law/7a79fade-39b5-4d8a-b494-f30f4e13904a#T170K1X1"
-                      target="_blank"
-                    >第一百七十条第一款第（一）项</a>之规定，判决如下：
-                  </p>
-                  <p></p>
+                  <div class="text_wrap">
+                    {{this.cpfxgc}}
+                    <p></p>
+                  </div>
                 </div>
                 <div data-v-2da6a776>
                   <h2 id="JG" data-v-2da6a776>裁判结果</h2>
-                  <p data-v-2da6a776></p>
-                  <p>驳回上诉，维持原判。</p>
-                  <p>
-                    二审案件受理费10元，由上诉人迁安市
-                    <em>可以</em>维修部负担。
-                  </p>
-                  <p>本判决为终审判决。</p>
-                  <p></p>
+                  <div class="text_wrap">
+                    {{this.pjjg}}
+                    <p></p>
+                  </div>
                 </div>
                 <div data-v-2da6a776>
                   <h2 id="WB" data-v-2da6a776>文尾</h2>
-                  <p data-v-2da6a776></p>
-                  <p>审判长刘群勇</p>
-                  <p>审判员刘江静</p>
-                  <p>审判员冷玉</p>
-                  <p>二〇一五年四月二十三日</p>
-                  <p>书记员王启霞</p>
-                  <p></p>
+                  <div class="text_wrap">
+                    {{this.ww}}
+                    <p></p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -178,12 +135,51 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Home",
   data() {
     return {
-      input: ""
+      input: "",
+      get_text: "",
+      title: "",
+      jbfy: "",
+      content: "",
+      lkrq: "",
+      ah: "",
+      dsr:"",
+      ssjl: "",
+      ajjbqk: "",
+      cpfxgc: "",
+      pjjg: "",
+      ww: ""
     };
+  },
+  mounted: function() {
+    console.log(
+      "get " + this.$route.query.item
+    );
+    this.input = "";
+    this.get_text = "http://127.0.0.1:8010/detail/common/?rnum=" + this.$route.query.item;
+    axios
+      .get(
+        this.get_text
+      )
+      .then(response => {
+        this.itemData = new Array();
+        console.log(response.data);
+        this.ah = response.data.AH;
+        this.dsr = response.data.DSR;
+        this.ssjl = response.data.SSJL;
+        this.ajjbqk = response.data.AJJBQK;
+        this.cpfxgc = response.data.CPFXGC;
+        this.pjjg = response.data.PJJG;
+        this.ww = response.data.WW;
+        this.jbfy = response.data.JBFY;
+        this.lkrq = response.data.LKRQ;
+      })
+      .catch(error => console.log(error));
   },
   methods: {
     doSearch(e) {
@@ -1037,4 +1033,24 @@ em {
 .login-dialog .el-dialog__header {
   padding: 0;
 }
+.wenshu-content h1[data-v-2da6a776]::before, .wenshu-content h2[data-v-2da6a776]::before {
+    display: inline-block;
+    content: "";
+    width: 3px;
+    height: 20px;
+    margin-right: 14px;
+    position: relative;
+    top: 3px;
+    background-color: #637cbc;
+}
+.text_wrap {
+    margin-bottom: 20px;
+    text-indent: 2em;
+}
+.sep-wrapper .sep-item::after {
+    content: "|";
+    color: #8b94aa;
+    margin: 0 18px;
+}
+
 </style>
