@@ -54,6 +54,7 @@
                       placeholder="请输入案情描述、关键词、案由、案号..."
                       data-v-73d3fb0a
                       v-model="input"
+                      @keyup.enter="doSearch"
                     />
                     <div class="el-input-group__append" data-v-73d3fb0a @click="doSearch">
                       <i class="el-icon-search" data-v-73d3fb0a></i>
@@ -77,53 +78,65 @@
                   {{this.ah}}
                 </span>
                 <div class="flex-row sep-wrapper wenshu-info" data-v-2da6a776 data-v-6856ea31>
-                  <span class="sep-item" data-v-6856ea31>{{this.jbfy}}</span>
-                  <span class="sep-item sep-offset-left" data-v-6856ea31>{{this.ah}}</span>
-                  <span class="sep-item" data-v-6856ea31>{{this.lkrq}}</span>
+                  <span class="sep-item" data-v-6856ea31 v-if="this.have_info">{{this.jbfy}}</span>
+                  <span class="sep-item sep-offset-left" data-v-6856ea31 v-if="this.have_info">{{this.ah}}</span>
+                  <span class="sep-item" data-v-6856ea31 v-if="this.have_info">{{this.lkrq}}</span>
                 </div>
               </div>
               <div class="flex-col wenshu-content" data-v-2da6a776>
-                <div data-v-2da6a776>
+                <div data-v-2da6a776 v-if="this.have_info">
                   <h2 id="SBDSR" data-v-2da6a776>当事人信息</h2>
                   <div class="text_wrap">
                     {{this.dsr}}
                     <p></p>
                   </div>
                 </div>
-                <div data-v-2da6a776>
+                <div data-v-2da6a776 v-if="this.have_info">
                   <h2 id="SSJL" data-v-2da6a776>诉讼记录</h2>
+                  <div class="text_wrap">
+                    <p v-for="(item, id) in this.lsws" :key="id">
+                      <a v-bind:href="'/result?item=' + item">{{item}}</a>
+                    </p>
+                    <p></p>
+                  </div>
+                </div>
+                 <div data-v-2da6a776 v-if="this.have_info">
+                  <h2 id="SSJL" data-v-2da6a776>历审文书</h2>
                   <div class="text_wrap">
                     {{this.ssjl}}
                     <p></p>
                   </div>
                 </div>
-                <div data-v-2da6a776>
+                <div data-v-2da6a776 v-if="this.have_info">
                   <h2 id="SS" data-v-2da6a776>案件基本情况</h2>
                   <div class="text_wrap">
                     {{this.ajjbqk}}
                     <p></p>
                   </div>
                 </div>
-                <div data-v-2da6a776>
+                <div data-v-2da6a776 v-if="this.have_info">
                   <h2 id="LY" data-v-2da6a776>裁判分析过程</h2>
                   <div class="text_wrap">
                     {{this.cpfxgc}}
                     <p></p>
                   </div>
                 </div>
-                <div data-v-2da6a776>
+                <div data-v-2da6a776 v-if="this.have_info">
                   <h2 id="JG" data-v-2da6a776>裁判结果</h2>
                   <div class="text_wrap">
                     {{this.pjjg}}
                     <p></p>
                   </div>
                 </div>
-                <div data-v-2da6a776>
+                <div data-v-2da6a776 v-if="this.have_info">
                   <h2 id="WB" data-v-2da6a776>文尾</h2>
                   <div class="text_wrap">
                     {{this.ww}}
                     <p></p>
                   </div>
+                </div>
+                <div data-v-2da6a776 v-if="!this.have_info">
+                  <h2 id="WB" data-v-2da6a776>搜索的案件没有数据</h2>
                 </div>
               </div>
             </div>
@@ -153,7 +166,9 @@ export default {
       ajjbqk: "",
       cpfxgc: "",
       pjjg: "",
-      ww: ""
+      ww: "",
+      have_info: false,
+      lsws: new Array()
     };
   },
   mounted: function() {
@@ -167,6 +182,11 @@ export default {
         this.get_text
       )
       .then(response => {
+        this.have_info = !(typeof response.data.AH === 'undefined');
+        console.log(this.have_info)
+        if (!this.have_info) {
+          return;
+        }
         this.itemData = new Array();
         console.log(response.data);
         this.ah = response.data.AH;
@@ -178,6 +198,7 @@ export default {
         this.ww = response.data.WW;
         this.jbfy = response.data.JBFY;
         this.lkrq = response.data.LKRQ;
+        this.lsws = response.data.QSAH;
       })
       .catch(error => console.log(error));
   },

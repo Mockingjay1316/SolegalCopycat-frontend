@@ -62,6 +62,7 @@
                         placeholder="请输入案情描述、关键词、案由、案号..."
                         data-v-73d3fb0a
                         v-model="input"
+                        @keyup.enter="doSearch"
                       />
                       <div class="el-input-group__append" data-v-73d3fb0a @click="doSearch">
                         <i class="el-icon-search" data-v-73d3fb0a></i>
