@@ -296,7 +296,7 @@
                           v-for="item in court_level"
                           v-bind:key="item.id"
                         >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
+                          <div class="el-tree-node__content" style="padding-left: 0px;" @click="add_filter('level', item.court_level)">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
@@ -359,7 +359,7 @@
                           v-for="item in jp"
                           v-bind:key="item.id"
                         >
-                          <div class="el-tree-node__content" style="padding-left: 0px;">
+                          <div class="el-tree-node__content" style="padding-left: 0px;" @click="add_filter('procedure', item.jp)">
                             <span class="el-tree-node__expand-icon el-icon-caret-right is-leaf"></span>
                             <!---->
                             <!---->
@@ -509,10 +509,17 @@ export default {
       val: this.$route.query.year
     });
     this.filter.push({
-      cat: "cao",
-      val: this.$route.query.cao
+      cat: "coa",
+      val: this.$route.query.cause_of_action
     });
-    console.log(this.filter.year)
+    this.filter.push({
+      cat: "level",
+      val: this.$route.query.level
+    });
+    this.filter.push({
+      cat: "procedure",
+      val: this.$route.query.procedure
+    });
 
     this.get_text = "http://127.0.0.1:8010/search/common/?keyword=" + this.$route.query.key + "&page=" + this.$route.query.page;
     if (typeof this.filter[1].val !== "undefined") {
@@ -526,6 +533,12 @@ export default {
     }
     if (typeof this.filter[3].val !== "undefined") {
       this.get_text = this.get_text + "&cause_of_action=" + this.filter[3].val;
+    }
+    if (typeof this.filter[4].val !== "undefined") {
+      this.get_text = this.get_text + "&court_level=" + this.filter[4].val;
+    }
+    if (typeof this.filter[5].val !== "undefined") {
+      this.get_text = this.get_text + "&judicial_procedure=" + this.filter[5].val;
     }
 
     console.log("goto backend "+this.get_text);
